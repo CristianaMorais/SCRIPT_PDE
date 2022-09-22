@@ -1,5 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<tns:guiao xmlns:tns="http://www.example.org/guiao" xmlns:xsi="guiao.xsd ">
-
-</tns:guiao>
+<?xml version="1.0" encoding="utf-8"?>
+<guiao>
+  <Cabecalho>
+    <titulo>str1234</titulo>
+    <autor>str1234</autor>
+    <dataPublicacao>
+      <dia>str1234</dia>
+      <mes>str1234</mes>
+      <ano>str1234</ano>
+    </dataPublicacao>
+    <sinopse>str1234</sinopse>
+    <Personagens ID="???">
+      <nome>str1234</nome>
+      <descriçao>str1234</descriçao>
+    </Personagens>
+  </Cabecalho>
+  <Cenas>
+    <Temporada ID_Temporada="???">
+      <titulo>str1234</titulo>
+      <Personagens ID="???">
+        <nome>str1234</nome>
+        <descriçao>str1234</descriçao>
+      </Personagens>
+      <sinopse>str1234</sinopse>
+      <Episodios ID_Episodio="???">
+        <titulo>str1234</titulo>
+        <sinopse>str1234</sinopse>
+        <Personagens ID="???">
+          <nome>str1234</nome>
+          <descriçao>str1234</descriçao>
+        </Personagens>
+        <Cena contexto="str1234">
+          <texto>str1234</texto>
+          <fala ID="???">
+            <texto>str1234</texto>
+            <comentario>str1234</comentario>
+          </fala>
+          <refere ID="???">
+            <texto>str1234</texto>
+          </refere>
+          <contexto>str1234</contexto>
+          <adereco>str1234</adereco>
+        </Cena>
+      </Episodios>
+    </Temporada>
+    <Personagens ID="???">
+      <nome>str1234</nome>
+      <descriçao>str1234</descriçao>
+    </Personagens>
+  </Cenas>
+</guiao>

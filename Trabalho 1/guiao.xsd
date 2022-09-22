@@ -1,6 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<schema 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/guiao" 
+	xmlns:tns="http://www.example.org/guiao" 
+	elementFormDefault="qualified">
 
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/guiao"
-	xmlns:tns="http://www.example.org/guiao" elementFormDefault="qualified">
 
+	<element name="guiao" type="tns:guiao"/>
+
+	<complexType name="guiao">
+		<sequence>
+			<element name="Cabecalho" type="tns:Cabecalho" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="Cenas" type="tns:Cenas" maxOccurs="1"
+				minOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Cabecalho">
+		<sequence>
+			<element name="titulo" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="autor" type="string" minOccurs="1" maxOccurs="7"></element>
+			<element name="dataPublicacao" type="tns:dataPublicacao"
+				minOccurs="1" maxOccurs="1"></element>
+			<element name="sinopse" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="Personagens" type="tns:Personagens" minOccurs="0"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="dataPublicacao">
+		<sequence>
+			<element name="dia" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="mes" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="ano" type="string" minOccurs="1" maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="Personagens">
+		<sequence>
+			<element name="nome" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="descriçao" type="string" minOccurs="1"
+				maxOccurs="1"></element>
+		</sequence>
+		<attribute use="required" name="ID" type="ID" >			
+		</attribute>
+	</complexType>
+
+
+	<complexType name="Cenas">
+		<sequence>
+			<choice>
+				<element name="Temporada" type="tns:Temporada" minOccurs="0"
+					maxOccurs="unbounded"></element>
+				<element name="Episodios" type="tns:Episodios" minOccurs="0"
+					maxOccurs="unbounded" ></element>
+				<element name="Partes" type="tns:Partes" minOccurs="0"
+					maxOccurs="unbounded"></element>
+				<element name="Cena" type="tns:Cena" minOccurs="0"
+					maxOccurs="unbounded">
+				</element>
+			</choice>
+			<element name="Personagens" type="tns:Personagens" minOccurs="0"
+				maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="Temporada">
+		<sequence>
+			<element name="titulo" type="string" minOccurs="1" 
+				maxOccurs="1"></element>
+			<element name="Personagens" type="tns:Personagens" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="sinopse" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="Episodios" type="tns:Episodios" minOccurs="1"
+				maxOccurs="unbounded"></element>
+		</sequence>
+		<attribute use="required" name="ID_Temporada" type="ID" />
+	</complexType>
+
+	<complexType name="Episodios">
+		<sequence>
+			<element name="titulo" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="sinopse" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="Personagens" type="tns:Personagens" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="Cena" type="tns:Cena" minOccurs="1" maxOccurs="unbounded"></element>
+		</sequence>
+		<attribute use="required" name="ID_Episodio" type="ID" />
+	</complexType>
+
+
+	<complexType name="Partes">
+		<sequence>
+			<element name="titulo" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="sinopse" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="Personagens" type="tns:Personagens" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="Cena" type="tns:Cena" minOccurs="1" maxOccurs="unbounded"></element>
+		</sequence>
+		<attribute use="required" name="ID_Partes" type="ID" />
+	</complexType>
+
+	<complexType name="Cena" mixed="true">
+		<sequence>
+			<element name="texto" type="string" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="fala" type="tns:fala" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="refere" type="tns:refere" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="contexto" type="string" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="adereco" type="string" minOccurs="0"
+				maxOccurs="unbounded"></element>
+		</sequence>
+			 <attribute  use="required" name="contexto" type="string"></attribute>
+	</complexType>
+
+	<complexType name="fala" mixed="true">
+		<sequence>
+		<element name="texto" type="string"></element>
+		<element name="comentario" type="string" minOccurs="0"
+					maxOccurs="unbounded"></element>
+		</sequence>
+		<attribute use="required" name="ID" type="IDREF"></attribute>
+	</complexType>
+	
+	<complexType name="refere">
+		<sequence>
+			<element name="texto" type="string"></element>
+		</sequence>
+		<attribute use="required" name="ID" type="IDREF"></attribute>
+	</complexType>
+	
 </schema>

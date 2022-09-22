@@ -1,2 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE guiao SYSTEM "guiao.dtd">
+
+<guiao>
+	<cabeçalho>
+		<personagens>
+			<personagem p = "LS">
+				<nome> Luck Skywalker </nome>
+				<descricao> Ator, Guerra das estrelas </descricao>
+			</personagem>
+			<personagem p = "DV">
+				<nome> Darth Vader </nome>
+				<descricao> Ator, Guerra das estrelas </descricao>
+			</personagem>
+			<personagem p = "PG">
+				<nome> Peter Griffin </nome>
+				<descricao> Ator, Family Guy </descricao>
+			</personagem>
+		</personagens>
+
+		<titulo>Primeiro trabalho da cadeira de Processamento de Documentos Estruturados</titulo>
+		<autor> Cristiana Morais </autor>
+		<autor> Rui Sousa </autor>
+		<dataPublicacao>
+			<dia>24</dia>
+			<mes>10</mes>
+			<ano>2022</ano>
+		</dataPublicacao>
+	</cabeçalho>
+
+	<cenas>
+		<temporada id="FriendsTEMP1">
+			<titulo> Friends </titulo>
+			<personagens>
+				<personagem p="RG1">
+					<nome> Rachel Green </nome>
+					<descricao> Jennifer Aniston, </descricao>
+				</personagem>
+				<personagem p="MG1">
+					<nome> Monica Geller </nome>
+					<descricao> Courteney Cox, </descricao>
+				</personagem>
+				<personagem p="PB1">
+					<nome> Phoebe Buffay </nome>
+					<descricao> Lisa Kudrow, </descricao>
+				</personagem>
+				<personagem p="JT1">
+					<nome> Joey Tribbiani </nome>
+					<descricao> Matt LeBlanc, </descricao>
+				</personagem>
+				<personagem p="CB1">
+					<nome> Chandler Bing </nome>
+					<descricao> Matthew Perry, </descricao>
+				</personagem>
+				<personagem p="ROSSG1">
+					<nome> Ross Geller </nome>
+					<descricao> David Schwimmer </descricao>
+				</personagem>
+			</personagens>
+
+			<sinopse>
+				"A 1ª Temporada introduz os seis personagens principais: Rachel, Monica, Phoebe, Joey, 
+				Chandler e Ross. Rachel chega no Central Perk, após deixar seu noivo Barry no altar e se 
+				muda para o apartamento de Mônica. Ross tenta constantemente dizer a Rachel que a ama, 
+				enquanto sua ex-esposa lésbica, Carol, está esperando seu bebê. Joey é apresentado como um 
+				ator lutando por seu espaço, enquanto Phoebe trabalha como massagista. 
+				Chandler termina com namorada Janice, que frequentemente retorna em outros episódios."
+			</sinopse>
+			<episodio id="EP1S1"> 
+				<titulo> The One Where Monica Gets a Roommate </titulo>
+				<sinopse>
+					"Depois de deixar seu noivo, Barry, no altar, Rachel se encontra no Central Perk Café, 
+					encharcada em seu vestido de noiva, procurando por sua velha amiga Monica. 
+					Rachel acaba se mudando para o apartamento de Monica em Nova York. Chandler e Joey, 
+					que moram do outro lado do corredor de Monica, consolam Ross depois que sua esposa Carol 
+					acaba de deixá-lo por uma mulher. Monica, uma chef, se apaixona por "Paul the Wine Guy" 
+					apenas para ser esmagada por sua noite de paixão ter sido apenas um caso de uma noite. 
+					A turma pede que Rachel seja mais independente cortando os cartões de crédito de seu pai. 
+					Rachel, que nunca trabalhou antes, recebe uma oferta de emprego de garçonete no 
+					Central Perk. Ross, que tem uma queda por Rachel desde o colegial, a convida para sair."
+				</sinopse>
+				<cena>
+
+				</cena>
+			</episodio>
+		</temporada>
+
+		<temporada id="FSEASON2">
+			<titulo> Friends </titulo>
+			<personagens>
+				<personagem p="RG2">
+					<nome> Rachel Green </nome>
+					<descricao> Jennifer Aniston, </descricao>
+				</personagem>
+				<personagem p="MG2">
+					<nome> Monica Geller </nome>
+					<descricao> Courteney Cox, </descricao>
+				</personagem>
+				<personagem p="PB2">
+					<nome> Phoebe Buffay </nome>
+					<descricao> Lisa Kudrow, </descricao>
+				</personagem>
+				<personagem p="JT2">
+					<nome> Joey Tribbiani </nome>
+					<descricao> Matt LeBlanc, </descricao>
+				</personagem>
+				<personagem p="CB2">
+					<nome> Chandler Bing </nome>
+					<descricao> Matthew Perry, </descricao>
+				</personagem>
+				<personagem p="ROSSG2">
+					<nome> Ross Geller </nome>
+					<descricao> David Schwimmer </descricao>
+				</personagem>
+			</personagens>
+
+			<sinopse>
+			
+			</sinopse>
+			<episodio id="EP1S2">
+				<titulo> "The One with Ross's New Girlfriend" </titulo>
+				<sinopse>
+					"Ross, Rachel, Mônica, Chandler, Joey e Phoebe formam um grupo de seis amigos que 
+					lutam para se sobressair e progredir na competitiva vida de Manhattan. 
+					Seu humor inteligente e apoio mútuo incondicional fazem com sua amizade seja cada vez 
+					mais forte, superando assim todos os obstáculos que a vida lhes apresenta."
+				</sinopse>
+				<cena>
+
+				</cena>
+			</episodio>
+		</temporada>
+    </cenas>
+</guiao>
