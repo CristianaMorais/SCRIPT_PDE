@@ -2,8 +2,8 @@
 
 <!ENTITY % TXT "(#PCDATA)">
 
-<!ELEMENT guiao (cabeçalho, cenas)>
-<!ELEMENT cabeçalho (personagens?, titulo, autor+, dataPublicacao, sinopse?)>
+<!ELEMENT guiao (cabecalho, cenas)>
+<!ELEMENT cabecalho (personagens?, titulo, autor+, dataPublicacao, sinopse?)>
 
 <!ELEMENT dataPublicacao (dia, mes, ano)>
 <!ELEMENT titulo %TXT;>

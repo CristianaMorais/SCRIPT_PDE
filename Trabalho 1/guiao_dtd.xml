@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <!DOCTYPE guiao SYSTEM "guiao.dtd">
 
 <guiao>
-	<cabeçalho>
+	<cabecalho>
 		<personagens>
 			<personagem p = "LS">
 				<nome> Luck Skywalker </nome>
@@ -26,7 +26,7 @@
 			<mes>10</mes>
 			<ano>2022</ano>
 		</dataPublicacao>
-	</cabeçalho>
+	</cabecalho>
 
 	<cenas>
 		<temporada id="FriendsTEMP1">

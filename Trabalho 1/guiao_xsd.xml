@@ -1,51 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<guiao>
-  <Cabecalho>
-    <titulo>str1234</titulo>
-    <autor>str1234</autor>
-    <dataPublicacao>
-      <dia>str1234</dia>
-      <mes>str1234</mes>
-      <ano>str1234</ano>
-    </dataPublicacao>
-    <sinopse>str1234</sinopse>
-    <Personagens ID="???">
-      <nome>str1234</nome>
-      <descriçao>str1234</descriçao>
-    </Personagens>
-  </Cabecalho>
-  <Cenas>
-    <Temporada ID_Temporada="???">
-      <titulo>str1234</titulo>
-      <Personagens ID="???">
-        <nome>str1234</nome>
-        <descriçao>str1234</descriçao>
-      </Personagens>
-      <sinopse>str1234</sinopse>
-      <Episodios ID_Episodio="???">
-        <titulo>str1234</titulo>
-        <sinopse>str1234</sinopse>
-        <Personagens ID="???">
-          <nome>str1234</nome>
-          <descriçao>str1234</descriçao>
-        </Personagens>
-        <Cena contexto="str1234">
-          <texto>str1234</texto>
-          <fala ID="???">
-            <texto>str1234</texto>
-            <comentario>str1234</comentario>
-          </fala>
-          <refere ID="???">
-            <texto>str1234</texto>
-          </refere>
-          <contexto>str1234</contexto>
-          <adereco>str1234</adereco>
-        </Cena>
-      </Episodios>
-    </Temporada>
-    <Personagens ID="???">
-      <nome>str1234</nome>
-      <descriçao>str1234</descriçao>
-    </Personagens>
-  </Cenas>
-</guiao>
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:guiao xmlns:tns="http://www.example.org/guiao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/guiao guiao.xsd ">
+  <tns:Cabecalho>
+    <tns:titulo>tns:titulo</tns:titulo>
+    <tns:autor>tns:autor</tns:autor>
+    <tns:autor>tns:autor</tns:autor>
+    <tns:dataPublicacao>
+      <tns:dia>tns:dia</tns:dia>
+      <tns:mes>tns:mes</tns:mes>
+      <tns:ano>tns:ano</tns:ano>
+    </tns:dataPublicacao>
+    <tns:Personagens ID="idvalue0">
+    	<tns:nome>tns:nome</tns:nome>
+    	<tns:descriçao>tns:descriçao</tns:descriçao>
+    </tns:Personagens>
+  </tns:Cabecalho>
+  <tns:Cenas>
+  	<tns:Temporada ID_Temporada="idvalue01">
+  		<tns:titulo>tns:titulo</tns:titulo>
+  		<tns:Episodios ID_Episodio="idvalue2">
+  			<tns:titulo>tns:titulo</tns:titulo>
+  			<tns:Cena contexto="">
+  				<tns:fala ID="idvalue0">
+  					<tns:texto>tns:texto</tns:texto>
+            <tns:comentario>tns:comentario</tns:comentario>
+  				</tns:fala>
+  				<tns:refere ID="idvalue2">
+  					<tns:texto>tns:texto</tns:texto>
+  				</tns:refere>
+  				<tns:adereco>tns:adereço</tns:adereco>
+  				<tns:adereco>tns:adereço</tns:adereco>
+        </tns:Cena>
+  		</tns:Episodios>
+  	</tns:Temporada>
+  </tns:Cenas>
+</tns:guiao>
