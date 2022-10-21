@@ -80,7 +80,10 @@
 					Central Perk. Ross, que tem uma queda por Rachel desde o colegial, a convida para sair."
 				</sinopse>
 				<cena>
-
+					<comentario> O som do toque do telefone era muito alto </comentario>
+					<refere p="MG1">Referente a Mónica</refere>
+					<fala p="MG1"> "O tempo tem estado terrível"</fala>
+					<adereco>Telefone fixo</adereco>
 				</cena>
 			</episodio>
 		</temporada>
@@ -115,10 +118,16 @@
 			</personagens>
 
 			<sinopse>
-			
+				"Uma nova temporada mais cheia de surpresas."
 			</sinopse>
 			<episodio id="EP1S2">
 				<titulo> "The One with Ross's New Girlfriend" </titulo>
+				<personagens>
+					<personagem p="RossGirlf">
+						<nome> Tina Rich </nome>
+						<descricao> Maria Albertina </descricao>
+					</personagem>
+				</personagens>
 				<sinopse>
 					"Ross, Rachel, Mônica, Chandler, Joey e Phoebe formam um grupo de seis amigos que 
 					lutam para se sobressair e progredir na competitiva vida de Manhattan. 
@@ -126,7 +135,12 @@
 					mais forte, superando assim todos os obstáculos que a vida lhes apresenta."
 				</sinopse>
 				<cena>
-
+					<comentario> A nova namorada de Ross, uma jovem esbelta e alta </comentario>
+					<refere p="ROSSG2">Referente a Ross</refere>
+					<fala p="ROSSG2"> "Olá querida, olha o que trouxe para ti"</fala>
+					<fala p="RossGirlf"> "Que querido, obrigada."</fala>
+					<adereco>Rosa</adereco>
+					<comentario> A nova namorada de Ross ficou muito feliz.</comentario>
 				</cena>
 			</episodio>
 		</temporada>
