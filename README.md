@@ -1,13 +1,16 @@
-Theme
+## :clipboard: Theme
+
 The practical works performed in this curricular unit will have the same theme that will be approached in several facets, depending on each work.
 
 The theme is **the script** of an audiovisual production, and the type of document should be flexible enough to adapt to different genres, such as television series, soap operas, films or plays.
+
+To find out more about each job please click on the folder names below.
 
 ## 
 
 <details>
 <summary>
-  Trabalho 1
+  	:file_folder: Trabalho 1
 </summary>
 
 ## Document type definition
@@ -29,7 +32,7 @@ The theme is **the script** of an audiovisual production, and the type of docume
 ##
 <details>
 <summary>
-  Trabalho 2
+  	:file_folder: Trabalho 2
 </summary>
 </details>
 
@@ -37,8 +40,15 @@ The theme is **the script** of an audiovisual production, and the type of docume
 
 <details>
 <summary>
-  Trabalho 3
+  	:file_folder:Trabalho 3
 </summary>
 </details>
 
-##
+------------------------------------------------------------------------
+
+### &nbsp; :busts_in_silhouette: Autores&nbsp;/Authors&nbsp; :busts_in_silhouette:
+
+| Nome/Name                                             | Número Mecanográfico |
+|-------------------------------------------------------|----------------------|
+| [Cristiana Silva](https://github.com/CristianaMorais) | up201505454          |     
+| [Rui Santos](https://github.com/RSantos42)            | up201805317          |
