@@ -24,7 +24,7 @@
 <!ELEMENT nome %TXT;>
 <!ELEMENT descricao %TXT;>
 
-<!ELEMENT cenas (personagens?, ( temporada* | episodio* | partes* | cena*))>
+<!ELEMENT cenas ( temporada* | episodio* | partes* | cena*)>
 
 <!ELEMENT temporada (titulo, (personagens)?, (sinopse)?, episodio+)>
 <!ATTLIST temporada

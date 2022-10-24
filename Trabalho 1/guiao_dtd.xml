@@ -79,11 +79,11 @@
 					Rachel, que nunca trabalhou antes, recebe uma oferta de emprego de garçonete no 
 					Central Perk. Ross, que tem uma queda por Rachel desde o colegial, a convida para sair."
 				</sinopse>
-				<cena>
-					<comentario> O som do toque do telefone era muito alto </comentario>
-					<refere p="MG1">Referente a Mónica</refere>
-					<fala p="MG1"> "O tempo tem estado terrível"</fala>
-					<adereco>Telefone fixo</adereco>
+				<cena contexto="Em casa">
+					<refere p="MG1">Mónica entra na sua casa</refere> 
+					Mónica senta-se no sofá quando ouve o telefone <adereco>Telefone fixo</adereco> a tocar. <comentario> O som do toque do telefone era muito alto </comentario>
+                    É a sua amiga, Mónica diz :
+					<fala p="MG1"> "O tempo tem estado terrível"</fala>	
 				</cena>
 			</episodio>
 		</temporada>
@@ -134,7 +134,7 @@
 					Seu humor inteligente e apoio mútuo incondicional fazem com sua amizade seja cada vez 
 					mais forte, superando assim todos os obstáculos que a vida lhes apresenta."
 				</sinopse>
-				<cena>
+				<cena contexto="Em casa">
 					<comentario> A nova namorada de Ross, uma jovem esbelta e alta </comentario>
 					<refere p="ROSSG2">Referente a Ross</refere>
 					<fala p="ROSSG2"> "Olá querida, olha o que trouxe para ti"</fala>

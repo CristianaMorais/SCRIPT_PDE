@@ -63,8 +63,6 @@
 					maxOccurs="unbounded">
 				</element>
 			</choice>
-			<element name="Personagens" type="tns:Personagens" minOccurs="0"
-				maxOccurs="unbounded"></element>
 		</sequence>
 	</complexType>
 
@@ -109,15 +107,13 @@
 
 	<complexType name="Cena" mixed="true">
 		<sequence>
-			<element name="texto" type="string" minOccurs="0"
-				maxOccurs="unbounded"></element>
-			<element name="fala" type="tns:fala" minOccurs="0"
-				maxOccurs="unbounded"></element>
 			<element name="refere" type="tns:refere" minOccurs="0"
 				maxOccurs="unbounded"></element>
-			<element name="contexto" type="string" minOccurs="0"
-				maxOccurs="unbounded"></element>
 			<element name="adereco" type="string" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="comentario" type="string" minOccurs="0"
+				maxOccurs="unbounded"></element>
+			<element name="fala" type="tns:fala" minOccurs="0"
 				maxOccurs="unbounded"></element>
 		</sequence>
 			 <attribute  use="required" name="contexto" type="string"></attribute>
