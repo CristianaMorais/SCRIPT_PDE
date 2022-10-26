@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!ENTITY % TXT "(#PCDATA)">
+<!ENTITY % INFO "titulo, (personagens)?, (sinopse)?">
 
 <!ELEMENT guiao (cabecalho, cenas)>
 <!ELEMENT cabecalho (personagens?, titulo, autor+, dataPublicacao, sinopse?)>
@@ -26,15 +27,15 @@
 
 <!ELEMENT cenas ( temporada* | episodio* | partes* | cena*)>
 
-<!ELEMENT temporada (titulo, (personagens)?, (sinopse)?, episodio+)>
+<!ELEMENT temporada (%INFO;, episodio+)>
 <!ATTLIST temporada
 	id ID #REQUIRED>
 
-<!ELEMENT episodio (titulo, (personagens)?, (sinopse)?, cena+)>
+<!ELEMENT episodio (%INFO;, cena+)>
 <!ATTLIST episodio
 	id ID #REQUIRED>
 	
-<!ELEMENT partes (titulo, (personagens)?, (sinopse)?, cena+)>
+<!ELEMENT partes (%INFO;, cena+)>
 <!ATTLIST partes
 	id ID #REQUIRED>
 	
