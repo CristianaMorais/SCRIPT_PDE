@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:guiao xmlns:tns="http://www.example.org/guiao" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/guiao guiao.xsd">
+	<tns:Cabecalho>
+		<tns:titulo>Primeiro trabalho da cadeira de Processamento de Documentos Estruturados</tns:titulo>
+		<tns:autor>Cristiana Morais</tns:autor>
+		<tns:autor>Rui Santos</tns:autor>
+		<tns:dataPublicacao>
+			<tns:dia>24</tns:dia>
+			<tns:mes>10</tns:mes>
+			<tns:ano>2022</tns:ano>
+		</tns:dataPublicacao>
+		<tns:Personagens ID="LS">
+			<tns:nome>Luke Skywalker</tns:nome>
+			<tns:descriçao>Ator, Guerra das estrelas</tns:descriçao>
+		</tns:Personagens>
+	</tns:Cabecalho>
+	<tns:Cenas>
+		<tns:Temporada ID_Temporada="FriendsTEMP1">
+			<tns:titulo>Friends</tns:titulo>
+			<tns:Personagens ID="RG1">
+				<tns:nome>Rachel Green</tns:nome>
+				<tns:descriçao>Jennifer Aniston,</tns:descriçao>
+			</tns:Personagens>
+			<tns:Personagens ID="MG1">
+				<tns:nome>Monica Geller</tns:nome>
+				<tns:descriçao>Courteney Cox,</tns:descriçao>
+			</tns:Personagens>
+			<tns:Personagens ID="PB1">
+				<tns:nome>Phoebe Buffay</tns:nome>
+				<tns:descriçao>Lisa Kudrow,,</tns:descriçao>
+			</tns:Personagens>
+			<tns:Personagens ID="JT1">
+				<tns:nome>Joey Tribbiani</tns:nome>
+				<tns:descriçao>Matt LeBlanc,</tns:descriçao>
+			</tns:Personagens>
+			<tns:Personagens ID="CB1">
+				<tns:nome>Chandler Bing</tns:nome>
+				<tns:descriçao>Matthew Perry,</tns:descriçao>
+			</tns:Personagens>
+			<tns:Personagens ID="ROSSG1">
+				<tns:nome>Ross Geller</tns:nome>
+				<tns:descriçao>David Schwimmer</tns:descriçao>
+			</tns:Personagens>
+			<tns:sinopse>
+				"A 1ª Temporada introduz os seis personagens principais: Rachel, Monica, Phoebe, Joey, 
+				Chandler e Ross. Rachel chega no Central Perk, após deixar seu noivo Barry no altar e se 
+				muda para o apartamento de Mônica. Ross tenta constantemente dizer a Rachel que a ama, 
+				enquanto sua ex-esposa lésbica, Carol, está esperando seu bebê. Joey é apresentado como um 
+				ator lutando por seu espaço, enquanto Phoebe trabalha como massagista. 
+				Chandler termina com namorada Janice, que frequentemente retorna em outros episódios."
+			</tns:sinopse>
+			<tns:Episodios ID_Episodio="EP1S1">
+				<tns:titulo>The One Where Monica Gets a Roommate</tns:titulo>
+				<tns:sinopse>
+					"Depois de deixar seu noivo, Barry, no altar, Rachel se encontra no Central Perk Café, 
+					encharcada em seu vestido de noiva, procurando por sua velha amiga Monica. 
+					Rachel acaba se mudando para o apartamento de Monica em Nova York. Chandler e Joey, 
+					que moram do outro lado do corredor de Monica, consolam Ross depois que sua esposa Carol 
+					acaba de deixá-lo por uma mulher. Monica, uma chef, se apaixona por "Paul the Wine Guy" 
+					apenas para ser esmagada por sua noite de paixão ter sido apenas um caso de uma noite. 
+					A turma pede que Rachel seja mais independente cortando os cartões de crédito de seu pai. 
+					Rachel, que nunca trabalhou antes, recebe uma oferta de emprego de garçonete no 
+					Central Perk. Ross, que tem uma queda por Rachel desde o colegial, a convida para sair."
+				</tns:sinopse>
+				<tns:Cena contexto="No café">
+					<tns:refere ID="MG1">
+						<tns:texto>Mónica entra na sua casa</tns:texto>
+					</tns:refere>
+					Mónica senta-se no sofá quando ouve o telefone <tns:adereco> Telefone Fixo </tns:adereco>  a tocar.
+					<tns:comentario>O som do toque do telefone era muito alto</tns:comentario>
+					É a sua amiga, Mónica diz :
+					<tns:fala ID="MG1">
+						<tns:texto>"O tempo tem estado horrível"</tns:texto>
+					</tns:fala>
+				</tns:Cena>
+			</tns:Episodios>
+		</tns:Temporada>
+	</tns:Cenas>
+</tns:guiao>
