@@ -18,12 +18,12 @@
 			</personagem>
 		</personagens>
 
-		<titulo>Primeiro trabalho da cadeira de Processamento de Documentos Estruturados</titulo>
+		<titulo>Trabalho da cadeira de Processamento de Documentos Estruturados</titulo>
 		<autor> Cristiana Morais </autor>
 		<autor> Rui Santos </autor>
 		<dataPublicacao>
-			<dia>24</dia>
-			<mes>10</mes>
+			<dia>28</dia>
+			<mes>11</mes>
 			<ano>2022</ano>
 		</dataPublicacao>
 	</cabecalho>

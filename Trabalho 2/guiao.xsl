@@ -1,19 +1,321 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<?xml version="1.0"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    
+    <xsl:output method="html" encoding="UTF-8" />
 
-<xsl:output method="html" />
+    <xsl:template match="guiao">
+        <html>
+            <head>
+                <title>Trabalho 2 - PDE</title>  
+                <link rel="stylesheet" type="text/css" href="style.css"/>              
+            </head>
+            <body>
+                <xsl:apply-templates select="cabecalho"/>
+                <xsl:apply-templates select="cenas"/>
+            </body>
+        </html>
+    </xsl:template>
+   
+    <xsl:key name="p" match="personagem" use="@id" />
 
-<xsl:template match="guiao">
+    <xsl:template match="cabecalho">
+        <div id="cabecalho">
+            <h2>
+                <xsl:value-of select="titulo"/>
+            </h2>
 
-    <html>
-        <head>
-            <link rel="stylesheet" type="text/css" href="style.css"/>
-        </head>
+            <div id="data">
+                <p>
+                    <b>Data: </b>
+                    <p>
+                    <xsl:value-of select="dataPublicacao/dia"/>/
+                    <xsl:value-of select="dataPublicacao/mes"/>/
+                    <xsl:value-of select="dataPublicacao/ano"/>
+                    </p>
+                </p>
+            </div>
+            
+            <div id="autores">
+                <p>Autor(es): </p>
+                <xsl:apply-templates select="autor"/>
+            </div>
+            <xsl:if test="sinopse">
+                <xsl:apply-templates select="sinopse"/>
+            </xsl:if>
 
-        <body>
-        </body>
-    </html>
+            <xsl:if test="personagens">
+                <p>Tabela de personagens</p>
+                <xsl:apply-templates select="personagens"/>
+            </xsl:if>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="autor">
+        <xsl:for-each select=".">
+            <ul>
+                <li>
+                    <xsl:value-of select="." />
+                </li>
+            </ul>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="sinopse">
+        <div id="sinopse">
+            <p>
+                <xsl:value-of select="." />
+            </p>
+        </div>
+    </xsl:template>
 
-</xsl:template>
+    <xsl:template match="personagens">
+        <div id="personagens">
+            <table style="width:100%">
+                <tr>
+                    <th>Nome</th>
+                    <th>Descriçao</th>
+                </tr>
+                
+                <xsl:for-each select="personagem">
+                    <tr>
+                        <td>
+                            <xsl:value-of select="./nome" />
+                        </td>
+                        <td>
+                            <xsl:value-of select="./descricao" />
+                        </td>
+                    </tr>
+                </xsl:for-each>
+            </table>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="cenas">
+        <h4>Tabela de conteúdos</h4>
+        <div id="navegacao">
+            <xsl:if test="temporada">
+                <xsl:apply-templates select="temporada" mode="indice" />
+            </xsl:if>
+            
+            <xsl:if test="episodio">
+                <xsl:apply-templates select="episodio" mode="indice" />
+            </xsl:if>
+            
+            <xsl:if test="partes">
+                <xsl:apply-templates select="partes" mode="indice" />
+            </xsl:if>
+            
+            <xsl:if test="cena">
+                <xsl:apply-templates select="cena" mode="indice" />
+            </xsl:if>
+        </div>
+        
+        <div id="conteudo">
+            <xsl:if test="temporada">
+                <xsl:apply-templates select="temporada" mode="conteudo" />
+            </xsl:if>
+            <br></br>
+            <xsl:if test="episodio">
+                <xsl:apply-templates select="episodio" mode="conteudo" />
+            </xsl:if>
+            <br></br>
+            <xsl:if test="partes">
+                <xsl:apply-templates select="partes" mode="conteudo" />
+            </xsl:if>
+            <br></br>
+            <xsl:if test="cena">
+                <xsl:apply-templates select="partes" mode="conteudo" />
+            </xsl:if>
+            
+        </div>        
+    </xsl:template>
+    
+    <xsl:template match="temporada" mode="indice">
+        <LI>
+            <A HREF="#{generate-id()}">
+                <xsl:number format="1" />
+                . Temporada
+                -
+                <xsl:value-of select="titulo" />
+            </A>
+            <ul>
+                <xsl:apply-templates select="episodio" mode="indice" />
+            </ul>
+        </LI>
+    </xsl:template>
+    
+    <xsl:template match="episodio" mode="indice">
+        <LI>
+            <A href="#{generate-id()}">
+                <xsl:number format="1." />
+                .Episódio -
+                <xsl:value-of select="titulo" />
+            </A>
+            <ul>
+                <xsl:apply-templates select="cena" mode="indice" />
+            </ul>
+        </LI>
+    </xsl:template>
 
+    <xsl:template match="partes" mode="indice">
+        <LI>
+            <A href="#{generate-id()}">
+                <xsl:number format="1." />
+                Parte -
+                <xsl:value-of select="titulo" />
+            </A>
+            <ul>
+                <xsl:apply-templates select="cena" mode="indice" />
+            </ul>
+        </LI>
+    </xsl:template>
+    
+    <xsl:template match="cena" mode="indice">
+        <LI>
+            <A href="#{generate-id()}">
+                <xsl:number format="1." />
+                Cena -
+                <xsl:value-of select="@contexto" />
+            </A>
+        </LI>
+    </xsl:template>
+    
+    <xsl:template match="temporada" mode="conteudo">
+        <xsl:for-each select=".">
+            <div id="temporada">
+                <h2>
+                    <a name="{generate-id()}">
+                        <xsl:value-of select="titulo" />
+                    </a>
+                </h2>
+            
+                <xsl:if test="personagens">
+                    <p>Tabela de personagens</p>
+                    <xsl:apply-templates select="personagens" />
+                </xsl:if>
+                <xsl:if test="sinopse">
+                    <xsl:apply-templates select="sinopse" />
+                </xsl:if>
+                <xsl:apply-templates select="episodio" mode="conteudo" />
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="episodio" mode="conteudo">
+        <xsl:for-each select=".">
+            <div id="episodio">
+                <h2>
+                    <a name="{generate-id()}">
+                        <xsl:value-of select="titulo" />
+                    </a>
+                </h2>
+
+                <xsl:if test="personagens">
+                    <p>Tabela de personagens</p>
+                    <xsl:apply-templates select="personagens" />
+                </xsl:if>
+
+                <xsl:if test="sinopse">
+                    <xsl:apply-templates select="sinopse" />
+                </xsl:if>
+
+                <xsl:apply-templates select="cena" mode="conteudo" />
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="partes" mode="conteudo">
+        <xsl:for-each select=".">
+            <div id="partes">
+                <h2>
+                    <a name="{generate-id()}">
+                        <xsl:value-of select="titulo" />
+                    </a>
+                </h2>
+                
+                <xsl:if test="personagens">
+                    <p>Tabela de personagem/ens</p>
+                    <xsl:apply-templates select="personagens" />
+                </xsl:if>
+
+                <xsl:if test="sinopse">
+                    <xsl:apply-templates select="sinopse" />
+                </xsl:if>
+                <xsl:apply-templates select="cena" mode="conteudo" />
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="cena" mode="conteudo">
+        <xsl:for-each select=".">
+            <div id="cena">
+                <h2>
+                    <a name="{generate-id()}">
+                        <xsl:value-of select="@contexto" />
+                    </a>
+                </h2>
+                <p>Lista de conteúdos da cena</p>
+
+                <div id="listaPersonagens">
+                    <xsl:for-each select="fala">
+                        <ul>
+                            <li>
+                                <xsl:value-of select="@p" />
+                            </li>
+                        </ul>
+                    </xsl:for-each>
+                </div>
+
+                <div id="listaAderecos">
+                    <xsl:for-each select="adereco">
+                        <ul>
+                            <li>
+                                <xsl:value-of select="." />
+                            </li>
+                        </ul>
+                    </xsl:for-each>
+                </div>
+
+                <xsl:apply-templates select="fala" />
+                <xsl:apply-templates select="refere" />
+                <xsl:apply-templates select="adereco" />
+                <xsl:apply-templates select="comentario"/>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="fala">
+        <p id="person">
+            <xsl:value-of select="@p" />
+            :
+        </p>
+        <p>
+            <xsl:value-of select="text()" />
+            <xsl:if test="comentario">
+                <xsl:apply-templates select="comentario" />
+            </xsl:if>
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="comentario">
+        <b>Comentários: </b>
+        <i>
+            <p>(<xsl:value-of select="."/>) </p>
+        </i>
+    </xsl:template>
+    
+    <xsl:template match="refere">
+        <p class="upperCase">
+            Referencia:
+            <xsl:value-of select="@p" />
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="adereco">
+        <p>
+            <b>Adereço: </b>
+            <xsl:value-of select="." />
+        </p>
+    </xsl:template>
 </xsl:stylesheet>
