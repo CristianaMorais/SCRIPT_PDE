@@ -16,7 +16,7 @@
             </body>
         </html>
     </xsl:template>
-   
+
     <xsl:key name="p" match="personagem" use="@id" />
 
     <xsl:template match="cabecalho">
@@ -280,6 +280,9 @@
                 <xsl:apply-templates select="fala" />
                 <xsl:apply-templates select="refere" />
                 <xsl:apply-templates select="adereco" />
+                <p>
+                    <b>Comentários: </b>
+                </p>
                 <xsl:apply-templates select="comentario"/>
             </div>
         </xsl:for-each>
@@ -299,7 +302,6 @@
     </xsl:template>
     
     <xsl:template match="comentario">
-        <b>Comentários: </b>
         <i>
             <p>(<xsl:value-of select="."/>) </p>
         </i>
