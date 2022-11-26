@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<xsl:stylesheet version="1.0"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
     <xsl:output method="html" encoding="UTF-8" />
 
@@ -11,13 +10,41 @@
                 <link rel="stylesheet" type="text/css" href="style.css"/>              
             </head>
             <body>
-                <xsl:apply-templates select="cabecalho"/>
-                <xsl:apply-templates select="cenas"/>
+    			<xsl:variable name="autor" select="count(/guiao/cabecalho/autor)"/>
+				<xsl:variable name="data" select="count(/guiao/cabecalho/dataPublicacao)"/>
+				<xsl:variable name="pers" select="count(/guiao/cabecalho/personagens)"/>
+				<xsl:variable name="cabTitulo" select="count(/guiao/cabecalho/titulo)"/>
+                <xsl:variable name="tempor" select="count(/guiao/cenas/temporada)" />
+				<xsl:variable name="epis" select="count(/guiao/cenas/episodio)" />
+				<xsl:variable name="partes" select="count(/guiao/cenas/partes)" />
+				<xsl:variable name="cena" select="count(/guiao/cenas/cena)" />
+
+				<xsl:choose>
+                    <xsl:when test="$autor &lt; 0 and $data &lt; 0 and $pers &lt; 0 and $cabTitulo &lt; 0">
+                        <xsl:message terminate="no">
+                            Erro: Cabeçalho do guião mal construído!
+                        </xsl:message>
+                    </xsl:when>
+                    
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="cabecalho"/>
+                        
+                        <xsl:choose>
+                            <xsl:when test="$tempor &lt; 0 and $epis &lt; 0 and $partes &lt; 0 and $cena &lt; 0">
+                                <xsl:message terminate="no">
+                                    Erro: Corpo do guião mal construído!
+                                </xsl:message>
+                            </xsl:when>
+
+                            <xsl:otherwise>
+                                <xsl:apply-templates select="cenas"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:otherwise>
+                </xsl:choose>
             </body>
         </html>
     </xsl:template>
-
-    <xsl:key name="p" match="personagem" use="@id" />
 
     <xsl:template match="cabecalho">
         <div id="cabecalho">
@@ -28,8 +55,7 @@
             <div id="data">
                 <p>
                     <b>Data: </b>
-                    <p>
-                    <xsl:value-of select="dataPublicacao/dia"/>/
+                    <p><xsl:value-of select="dataPublicacao/dia"/>/
                     <xsl:value-of select="dataPublicacao/mes"/>/
                     <xsl:value-of select="dataPublicacao/ano"/>
                     </p>
@@ -37,17 +63,17 @@
             </div>
             
             <div id="autores">
-                <p>Autor(es): </p>
+                <p>
+                    <b> Autor(es): </b>
+                </p>
                 <xsl:apply-templates select="autor"/>
             </div>
-            <xsl:if test="sinopse">
-                <xsl:apply-templates select="sinopse"/>
-            </xsl:if>
 
             <xsl:if test="personagens">
-                <p>Tabela de personagens</p>
+                <p>Personagens: </p>
                 <xsl:apply-templates select="personagens"/>
             </xsl:if>
+
         </div>
     </xsl:template>
     
@@ -92,7 +118,6 @@
     </xsl:template>
     
     <xsl:template match="cenas">
-        <h4>Tabela de conteúdos</h4>
         <div id="navegacao">
             <xsl:if test="temporada">
                 <xsl:apply-templates select="temporada" mode="indice" />
@@ -191,7 +216,7 @@
                 </h2>
             
                 <xsl:if test="personagens">
-                    <p>Tabela de personagens</p>
+                    <p>Personagens: </p>
                     <xsl:apply-templates select="personagens" />
                 </xsl:if>
                 <xsl:if test="sinopse">
@@ -212,7 +237,7 @@
                 </h2>
 
                 <xsl:if test="personagens">
-                    <p>Tabela de personagens</p>
+                    <p>Personagens: </p>
                     <xsl:apply-templates select="personagens" />
                 </xsl:if>
 
@@ -235,7 +260,7 @@
                 </h2>
                 
                 <xsl:if test="personagens">
-                    <p>Tabela de personagem/ens</p>
+                    <p>Personagens: </p>
                     <xsl:apply-templates select="personagens" />
                 </xsl:if>
 
