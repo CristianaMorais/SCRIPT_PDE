@@ -20,7 +20,7 @@
 				<xsl:variable name="cena" select="count(/guiao/cenas/cena)" />
 
 				<xsl:choose>
-                    <xsl:when test="$autor &lt; 0 and $data &lt; 0 and $pers &lt; 0 and $cabTitulo &lt; 0">
+                    <xsl:when test="$autor &lt; 1 or $data &lt; 1 or $pers &lt; 1 or $cabTitulo &lt; 1">
                         <xsl:message terminate="no">
                             Erro: Cabeçalho do guião mal construído!
                         </xsl:message>
