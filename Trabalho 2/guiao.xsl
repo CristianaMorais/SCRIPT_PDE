@@ -53,19 +53,14 @@
             </h2>
 
             <div id="data">
-                <p>
-                    <b>Data: </b>
-                    <p><xsl:value-of select="dataPublicacao/dia"/>/
-                    <xsl:value-of select="dataPublicacao/mes"/>/
-                    <xsl:value-of select="dataPublicacao/ano"/>
-                    </p>
-                </p>
+                <p>Data: </p>
+                <xsl:value-of select="dataPublicacao/dia"/> /
+                <xsl:value-of select="dataPublicacao/mes"/> /
+                <xsl:value-of select="dataPublicacao/ano"/>
             </div>
             
             <div id="autores">
-                <p>
-                    <b> Autor(es): </b>
-                </p>
+                <p>Autor(es): </p>
                 <xsl:apply-templates select="autor"/>
             </div>
 
@@ -89,9 +84,8 @@
     
     <xsl:template match="sinopse">
         <div id="sinopse">
-            <p>
-                <xsl:value-of select="." />
-            </p>
+            <p>Sinopse: </p>
+            <xsl:value-of select="." />
         </div>
     </xsl:template>
 
@@ -280,7 +274,7 @@
                         <xsl:value-of select="@contexto" />
                     </a>
                 </h2>
-                <p>Lista de conteúdos da cena</p>
+                <p>Personagens da cena: </p>
 
                 <div id="listaPersonagens">
                     <xsl:for-each select="fala">
@@ -292,6 +286,8 @@
                     </xsl:for-each>
                 </div>
 
+                <p>Adereços: </p>
+                
                 <div id="listaAderecos">
                     <xsl:for-each select="adereco">
                         <ul>
@@ -302,12 +298,12 @@
                     </xsl:for-each>
                 </div>
 
-                <xsl:apply-templates select="fala" />
+                <xsl:apply-templates select="fala"/>
+
+                <p>Referência: </p>
                 <xsl:apply-templates select="refere" />
-                <xsl:apply-templates select="adereco" />
-                <p>
-                    <b>Comentários: </b>
-                </p>
+
+                <p>Comentários: </p>
                 <xsl:apply-templates select="comentario"/>
             </div>
         </xsl:for-each>
@@ -316,33 +312,27 @@
     <xsl:template match="fala">
         <p id="person">
             <xsl:value-of select="@p" />
-            :
         </p>
-        <p>
+        <div id="fala_text">
             <xsl:value-of select="text()" />
-            <xsl:if test="comentario">
-                <xsl:apply-templates select="comentario" />
-            </xsl:if>
-        </p>
+        </div>
+        <xsl:if test="comentario">
+            <xsl:apply-templates select="comentario" />
+        </xsl:if>
+    </xsl:template>
+
+        
+    <xsl:template match="refere">
+        <div class="refer">
+            <ul>
+                <xsl:value-of select="@p"/>
+            </ul>
+        </div>
     </xsl:template>
     
     <xsl:template match="comentario">
-        <i>
-            <p>(<xsl:value-of select="."/>) </p>
-        </i>
-    </xsl:template>
-    
-    <xsl:template match="refere">
-        <p class="upperCase">
-            Referencia:
-            <xsl:value-of select="@p" />
-        </p>
-    </xsl:template>
-    
-    <xsl:template match="adereco">
-        <p>
-            <b>Adereço: </b>
-            <xsl:value-of select="." />
-        </p>
+        <ul>
+            <i>(<xsl:value-of select="."/>)</i>
+        </ul>
     </xsl:template>
 </xsl:stylesheet>

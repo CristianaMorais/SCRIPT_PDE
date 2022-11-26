@@ -1,3 +1,43 @@
 body {
     background-color: #93BFEB;
 }
+
+h2 {
+    background-color: CornflowerBlue;
+	display: 	block; 
+	text-align:	center;
+	width: 100%;
+	font-weight: bold;
+    font-size:	14pt;
+	text-transform: capitalize;
+	font-family: "Times New Roman", Times, serif;
+}
+
+p {
+    text-indent: 10px;
+    font-size: 100%;
+    font-style: normal;
+    font-family: "Times New Roman", Times, serif;;
+    font-weight: bold;
+}
+
+p#person {
+    margin-left: 11cm;
+}
+
+div#fala_text{
+    margin-left: 7cm;
+}
+
+div#refer {
+    text-transform: uppercase;
+}
+
+div#cabecalho, #navegacao, #conteudo{
+    display: block; 
+	border:	5px;
+	border-style: solid;
+    border-color:SteelBlue;
+	padding: 10px;
+	margin:	10px;
+}

@@ -140,6 +140,7 @@
 					<fala p="ROSSG2"> "Olá querida, olha o que trouxe para ti"</fala>
 					<fala p="RossGirlf"> "Que querido, obrigada."</fala>
 					<adereco>Rosa</adereco>
+					<refere p="RossGirlf"> </refere>
 					<comentario> A nova namorada de Ross ficou muito feliz.</comentario>
 				</cena>
 			</episodio>
