@@ -52,8 +52,8 @@
                 <xsl:value-of select="titulo"/>
             </h2>
 
+            <p>Data: </p>
             <div id="data">
-                <p>Data: </p>
                 <xsl:value-of select="dataPublicacao/dia"/> /
                 <xsl:value-of select="dataPublicacao/mes"/> /
                 <xsl:value-of select="dataPublicacao/ano"/>
@@ -91,7 +91,7 @@
 
     <xsl:template match="personagens">
         <div id="personagens">
-            <table style="width:100%">
+            <table style="width:70%">
                 <tr>
                     <th>Nome</th>
                     <th>Descriçao</th>
@@ -168,7 +168,7 @@
         <LI>
             <A href="#{generate-id()}">
                 <xsl:number format="1." />
-                .Episódio -
+                    Episódio -
                 <xsl:value-of select="titulo" />
             </A>
             <ul>

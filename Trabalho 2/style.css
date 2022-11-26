@@ -17,19 +17,41 @@ p {
     text-indent: 10px;
     font-size: 100%;
     font-style: normal;
-    font-family: "Times New Roman", Times, serif;;
+    font-family: "Times New Roman", Times, serif;
     font-weight: bold;
+}
+
+ul,li {
+    margin: 0;
+    font-size: 100%;
+    font-style: normal;
+    font-family: "Times New Roman", Times, serif;
+}
+
+table, th, td {
+    border: 2px solid black;
+    margin-left: 1cm;
+    width: 50%;
+    height: 24px;
+    padding: 7px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    content: center;
 }
 
 p#person {
     margin-left: 11cm;
 }
 
-div#fala_text{
+div#fala_text {
     margin-left: 7cm;
 }
 
-div#refer {
+div#data {
+    margin-left: 20px;
+}
+
+div.refer {
     text-transform: uppercase;
 }
 
