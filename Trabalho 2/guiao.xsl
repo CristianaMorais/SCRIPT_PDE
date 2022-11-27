@@ -203,11 +203,11 @@
     <xsl:template match="temporada" mode="conteudo">
         <xsl:for-each select=".">
             <div id="temporada">
-                <h2>
+                <h3>
                     <a name="{generate-id()}">
                         <xsl:value-of select="titulo" />
                     </a>
-                </h2>
+                </h3>
             
                 <xsl:if test="personagens">
                     <p>Personagens: </p>
@@ -224,11 +224,11 @@
     <xsl:template match="episodio" mode="conteudo">
         <xsl:for-each select=".">
             <div id="episodio">
-                <h2>
+                <h3>
                     <a name="{generate-id()}">
                         <xsl:value-of select="titulo" />
                     </a>
-                </h2>
+                </h3>
 
                 <xsl:if test="personagens">
                     <p>Personagens: </p>
@@ -247,11 +247,11 @@
     <xsl:template match="partes" mode="conteudo">
         <xsl:for-each select=".">
             <div id="partes">
-                <h2>
+                <h3>
                     <a name="{generate-id()}">
                         <xsl:value-of select="titulo" />
                     </a>
-                </h2>
+                </h3>
                 
                 <xsl:if test="personagens">
                     <p>Personagens: </p>
@@ -269,11 +269,11 @@
     <xsl:template match="cena" mode="conteudo">
         <xsl:for-each select=".">
             <div id="cena">
-                <h2>
+                <h3>
                     <a name="{generate-id()}">
                         <xsl:value-of select="@contexto" />
                     </a>
-                </h2>
+                </h3>
                 
                 <p>Personagens pertinentes da cena: </p>
                 <div id="listaPersonagens">

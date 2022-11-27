@@ -8,14 +8,25 @@ h2 {
 	text-align:	center;
 	width: 100%;
 	font-weight: bold;
-    font-size:	14pt;
+    font-size:	28pt;
+	text-transform: capitalize;
+	font-family: "Times New Roman", Times, serif;
+}
+
+h3 {
+    background-color: CornflowerBlue;
+	display: 	block; 
+	text-align:	center;
+	width: 100%;
+	font-weight: bold;
+    font-size:	22pt;
 	text-transform: capitalize;
 	font-family: "Times New Roman", Times, serif;
 }
 
 p {
     text-indent: 10px;
-    font-size: 100%;
+    font-size: 15pt;
     font-style: normal;
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
@@ -26,6 +37,10 @@ ul,li {
     font-size: 100%;
     font-style: normal;
     font-family: "Times New Roman", Times, serif;
+}
+
+th {
+    font-size: 14pt;
 }
 
 table, th, td {
