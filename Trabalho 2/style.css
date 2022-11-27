@@ -40,6 +40,7 @@ table, th, td {
 }
 
 p#person {
+    text-transform: uppercase;
     margin-left: 11cm;
 }
 

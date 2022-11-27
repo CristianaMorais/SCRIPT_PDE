@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
-    <xsl:output method="html" encoding="UTF-8" />
+    <xsl:output method="html" encoding="UTF-8" />   
 
     <xsl:template match="guiao">
         <html>
@@ -274,15 +274,18 @@
                         <xsl:value-of select="@contexto" />
                     </a>
                 </h2>
-                <p>Personagens da cena: </p>
-
+                
+                <p>Personagens pertinentes da cena: </p>
                 <div id="listaPersonagens">
                     <xsl:for-each select="fala">
-                        <ul>
-                            <li>
-                                <xsl:value-of select="@p" />
-                            </li>
-                        </ul>
+                        <xsl:variable name='fala_id' select="@p"/>
+                        <xsl:for-each select="//personagem[@p=$fala_id]">
+                            <ul>
+                                <li>
+                                    <xsl:value-of select="nome"/> 
+                                </li>
+                            </ul>                           
+                        </xsl:for-each>                                                         
                     </xsl:for-each>
                 </div>
 
@@ -300,9 +303,19 @@
 
                 <xsl:apply-templates select="fala"/>
 
-                <p>Referência: </p>
-                <xsl:apply-templates select="refere" />
-
+                <xsl:variable name="referencia" select="count(//refere)"/>
+                <xsl:choose>
+                    <xsl:when test="$referencia &lt; 1">
+                        <xsl:message terminate="no">
+                            Erro: Não há referências!
+                        </xsl:message>
+                    </xsl:when>
+                    
+                    <xsl:otherwise>
+                        <p>Referência: </p>
+                        <xsl:apply-templates select="refere" />
+                    </xsl:otherwise>
+                </xsl:choose>
                 <p>Comentários: </p>
                 <xsl:apply-templates select="comentario"/>
             </div>
@@ -311,28 +324,47 @@
     
     <xsl:template match="fala">
         <p id="person">
-            <xsl:value-of select="@p" />
+            <xsl:for-each select=".">
+                <xsl:variable name='person_id' select="@p"/>
+                <xsl:for-each select="//personagem[@p=$person_id]">
+                    <xsl:value-of select="nome"/>                       
+                </xsl:for-each>                                                         
+            </xsl:for-each>
         </p>
+
         <div id="fala_text">
             <xsl:value-of select="text()" />
         </div>
+
         <xsl:if test="comentario">
             <xsl:apply-templates select="comentario" />
         </xsl:if>
+
     </xsl:template>
 
         
     <xsl:template match="refere">
         <div class="refer">
-            <ul>
-                <xsl:value-of select="@p"/>
-            </ul>
+            <xsl:for-each select=".">
+                <xsl:variable name='refer_id' select="@p"/>
+                <xsl:for-each select="//personagem[@p=$refer_id]">
+                    <ul>
+                        <li>
+                            <xsl:value-of select="nome"/> 
+                        </li>
+                    </ul>                           
+                </xsl:for-each>                                                         
+            </xsl:for-each>
         </div>
     </xsl:template>
     
     <xsl:template match="comentario">
-        <ul>
-            <i>(<xsl:value-of select="."/>)</i>
-        </ul>
+        <xsl:for-each select=".">
+            <ul>
+                <li>
+                    <i>(<xsl:value-of select="."/>)</i>
+                </li>
+            </ul>
+        </xsl:for-each>
     </xsl:template>
 </xsl:stylesheet>

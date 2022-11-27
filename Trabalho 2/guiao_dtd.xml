@@ -30,27 +30,27 @@
 
 	<cenas>
 		<temporada id="FriendsTEMP1">
-			<titulo> Friends </titulo>
+			<titulo> Friends 1.0 </titulo>
 			<personagens>
 				<personagem p="RG1">
 					<nome> Rachel Green </nome>
-					<descricao> Jennifer Aniston, </descricao>
+					<descricao> Jennifer Aniston </descricao>
 				</personagem>
 				<personagem p="MG1">
 					<nome> Monica Geller </nome>
-					<descricao> Courteney Cox, </descricao>
+					<descricao> Courteney Cox </descricao>
 				</personagem>
 				<personagem p="PB1">
 					<nome> Phoebe Buffay </nome>
-					<descricao> Lisa Kudrow, </descricao>
+					<descricao> Lisa Kudrow </descricao>
 				</personagem>
 				<personagem p="JT1">
 					<nome> Joey Tribbiani </nome>
-					<descricao> Matt LeBlanc, </descricao>
+					<descricao> Matt LeBlanc </descricao>
 				</personagem>
 				<personagem p="CB1">
 					<nome> Chandler Bing </nome>
-					<descricao> Matthew Perry, </descricao>
+					<descricao> Matthew Perry </descricao>
 				</personagem>
 				<personagem p="ROSSG1">
 					<nome> Ross Geller </nome>
@@ -89,27 +89,27 @@
 		</temporada>
 
 		<temporada id="FSEASON2">
-			<titulo> Friends </titulo>
+			<titulo> Friends 2.0 </titulo>
 			<personagens>
 				<personagem p="RG2">
 					<nome> Rachel Green </nome>
-					<descricao> Jennifer Aniston, </descricao>
+					<descricao> Jennifer Aniston </descricao>
 				</personagem>
 				<personagem p="MG2">
 					<nome> Monica Geller </nome>
-					<descricao> Courteney Cox, </descricao>
+					<descricao> Courteney Cox </descricao>
 				</personagem>
 				<personagem p="PB2">
 					<nome> Phoebe Buffay </nome>
-					<descricao> Lisa Kudrow, </descricao>
+					<descricao> Lisa Kudrow </descricao>
 				</personagem>
 				<personagem p="JT2">
 					<nome> Joey Tribbiani </nome>
-					<descricao> Matt LeBlanc, </descricao>
+					<descricao> Matt LeBlanc </descricao>
 				</personagem>
 				<personagem p="CB2">
 					<nome> Chandler Bing </nome>
-					<descricao> Matthew Perry, </descricao>
+					<descricao> Matthew Perry </descricao>
 				</personagem>
 				<personagem p="ROSSG2">
 					<nome> Ross Geller </nome>
