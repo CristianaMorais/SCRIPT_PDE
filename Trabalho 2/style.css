@@ -63,6 +63,13 @@ div#fala_text {
     margin-left: 7cm;
 }
 
+div#comentario {
+	margin-left: 7cm;
+    margin-top: 0.3cm;
+	text-transform: capitalize;
+	font-family: "Times New Roman", Times, serif;
+}
+
 div#data {
     margin-left: 20px;
 }

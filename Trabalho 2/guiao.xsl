@@ -301,7 +301,13 @@
                     </xsl:for-each>
                 </div>
 
-                <xsl:apply-templates select="fala"/>
+                <xsl:if test="fala">
+                    <xsl:apply-templates select="fala"/>
+                </xsl:if>
+                
+                <xsl:if test="comentario">
+                    <xsl:apply-templates select="comentario"/>
+                </xsl:if>
 
                 <xsl:variable name="referencia" select="count(//refere)"/>
                 <xsl:choose>
@@ -316,8 +322,6 @@
                         <xsl:apply-templates select="refere" />
                     </xsl:otherwise>
                 </xsl:choose>
-                <p>Comentários: </p>
-                <xsl:apply-templates select="comentario"/>
             </div>
         </xsl:for-each>
     </xsl:template>
@@ -359,12 +363,10 @@
     </xsl:template>
     
     <xsl:template match="comentario">
-        <xsl:for-each select=".">
-            <ul>
-                <li>
-                    <i>(<xsl:value-of select="."/>)</i>
-                </li>
-            </ul>
-        </xsl:for-each>
+        <div id="comentario">
+            <xsl:for-each select=".">
+                <i>(<xsl:value-of select="."/>)</i>
+            </xsl:for-each>
+        </div>
     </xsl:template>
 </xsl:stylesheet>
