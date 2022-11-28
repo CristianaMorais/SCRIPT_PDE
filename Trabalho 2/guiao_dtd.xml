@@ -82,7 +82,6 @@
 				<cena contexto="Em casa">
 					<refere p="MG1">Mónica entra na sua casa</refere> 
 					Mónica senta-se no sofá quando ouve o telefone <adereco>Telefone fixo</adereco> a tocar. <comentario> O som do toque do telefone era muito alto </comentario>
-                    É a sua amiga, Mónica diz :
 					<fala p="MG1"> "O tempo tem estado terrível"</fala>	
 				</cena>
 			</episodio>

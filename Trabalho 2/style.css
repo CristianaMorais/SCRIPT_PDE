@@ -4,24 +4,42 @@ body {
 
 h2 {
     background-color: CornflowerBlue;
-	display: 	block; 
-	text-align:	center;
-	width: 100%;
-	font-weight: bold;
-    font-size:	28pt;
-	text-transform: capitalize;
-	font-family: "Times New Roman", Times, serif;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 28pt;
+    text-transform: capitalize;
+    font-family: "Times New Roman", Times, serif;
 }
 
 h3 {
     background-color: CornflowerBlue;
-	display: 	block; 
-	text-align:	center;
-	width: 100%;
-	font-weight: bold;
-    font-size:	22pt;
-	text-transform: capitalize;
-	font-family: "Times New Roman", Times, serif;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 22pt;
+    text-transform: capitalize;
+    font-family: "Times New Roman", Times, serif;
+}
+
+h3#contexto {
+    background-color: rgb(38, 177, 196);
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    text-transform: uppercase;
+
+}
+
+#ladere {
+    font-weight: bold;
 }
 
 p {
@@ -32,7 +50,8 @@ p {
     font-weight: bold;
 }
 
-ul,li {
+ul,
+li {
     margin: 0;
     font-size: 100%;
     font-style: normal;
@@ -43,7 +62,9 @@ th {
     font-size: 14pt;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 2px solid black;
     margin-left: 1cm;
     width: 50%;
@@ -64,9 +85,9 @@ div#fala_text {
 }
 
 div#comentario {
-	margin-left: 7cm;
+    margin-left: 7cm;
     margin-top: 0.3cm;
-	font-family: "Times New Roman", Times, serif;
+    font-family: "Times New Roman", Times, serif;
 }
 
 div#data {
@@ -77,11 +98,14 @@ div.refer {
     text-transform: uppercase;
 }
 
-div#cabecalho, #navegacao, #conteudo{
-    display: block; 
-	border:	5px;
-	border-style: solid;
-    border-color:SteelBlue;
-	padding: 10px;
-	margin:	10px;
+div#cabecalho,
+#navegacao,
+#conteudo {
+    display: block;
+    border: 5px;
+    border-style: solid;
+    border-color: SteelBlue;
+    padding: 10px;
+    margin: 10px;
 }
+

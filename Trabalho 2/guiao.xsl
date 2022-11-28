@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     
     <xsl:output method="html" encoding="UTF-8" />   
-
+    
     <xsl:template match="guiao">
         <html>
             <head>
@@ -10,65 +10,49 @@
                 <link rel="stylesheet" type="text/css" href="style.css"/>              
             </head>
             <body>
-    			<xsl:variable name="autor" select="count(/guiao/cabecalho/autor)"/>
-				<xsl:variable name="data" select="count(/guiao/cabecalho/dataPublicacao)"/>
-				<xsl:variable name="pers" select="count(/guiao/cabecalho/personagens)"/>
-				<xsl:variable name="cabTitulo" select="count(/guiao/cabecalho/titulo)"/>
+                <xsl:variable name="autor" select="count(/guiao/cabecalho/autor)"/>
+                <xsl:variable name="data" select="count(/guiao/cabecalho/dataPublicacao)"/>
+                <xsl:variable name="pers" select="count(/guiao/cabecalho/personagens)"/>
+                <xsl:variable name="cabTitulo" select="count(/guiao/cabecalho/titulo)"/>
                 <xsl:variable name="tempor" select="count(/guiao/cenas/temporada)" />
-				<xsl:variable name="epis" select="count(/guiao/cenas/episodio)" />
-				<xsl:variable name="partes" select="count(/guiao/cenas/partes)" />
-				<xsl:variable name="cena" select="count(/guiao/cenas/cena)" />
-
-				<xsl:choose>
+                <xsl:variable name="epis" select="count(/guiao/cenas/episodio)" />
+                <xsl:variable name="partes" select="count(/guiao/cenas/partes)" />
+                <xsl:variable name="cena" select="count(/guiao/cenas/cena)" />
+                
+                <xsl:choose>
                     <xsl:when test="$autor &lt; 1 or $data &lt; 1 or $pers &lt; 1 or $cabTitulo &lt; 1">
                         <xsl:message terminate="no">
                             Erro: Cabeçalho do guião mal construído!
                         </xsl:message>
-                    </xsl:when>
-                    
+                    </xsl:when>                   
                     <xsl:otherwise>
-                        <xsl:apply-templates select="cabecalho"/>
-                        
-                        <xsl:choose>
-                            <xsl:when test="$tempor &lt; 0 and $epis &lt; 0 and $partes &lt; 0 and $cena &lt; 0">
-                                <xsl:message terminate="no">
-                                    Erro: Corpo do guião mal construído!
-                                </xsl:message>
-                            </xsl:when>
-
-                            <xsl:otherwise>
-                                <xsl:apply-templates select="cenas"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
+                        <xsl:apply-templates select="cabecalho"/>                                                 
+                        <xsl:apply-templates select="cenas"/>                   
                     </xsl:otherwise>
                 </xsl:choose>
             </body>
         </html>
     </xsl:template>
-
+    
     <xsl:template match="cabecalho">
         <div id="cabecalho">
             <h2>
                 <xsl:value-of select="titulo"/>
             </h2>
-
             <p>Data: </p>
             <div id="data">
                 <xsl:value-of select="dataPublicacao/dia"/> /
                 <xsl:value-of select="dataPublicacao/mes"/> /
                 <xsl:value-of select="dataPublicacao/ano"/>
             </div>
-            
             <div id="autores">
                 <p>Autor(es): </p>
                 <xsl:apply-templates select="autor"/>
             </div>
-
             <xsl:if test="personagens">
                 <p>Personagens: </p>
                 <xsl:apply-templates select="personagens"/>
             </xsl:if>
-
         </div>
     </xsl:template>
     
@@ -88,15 +72,14 @@
             <xsl:value-of select="." />
         </div>
     </xsl:template>
-
+    
     <xsl:template match="personagens">
         <div id="personagens">
             <table style="width:70%">
                 <tr>
                     <th>Nome</th>
-                    <th>Descriçao</th>
+                    <th>Descrição</th>
                 </tr>
-                
                 <xsl:for-each select="personagem">
                     <tr>
                         <td>
@@ -168,7 +151,7 @@
         <LI>
             <A href="#{generate-id()}">
                 <xsl:number format="1." />
-                    Episódio -
+                Episódio -
                 <xsl:value-of select="titulo" />
             </A>
             <ul>
@@ -176,7 +159,7 @@
             </ul>
         </LI>
     </xsl:template>
-
+    
     <xsl:template match="partes" mode="indice">
         <LI>
             <A href="#{generate-id()}">
@@ -208,7 +191,6 @@
                         <xsl:value-of select="titulo" />
                     </a>
                 </h3>
-            
                 <xsl:if test="personagens">
                     <p>Personagens: </p>
                     <xsl:apply-templates select="personagens" />
@@ -229,16 +211,13 @@
                         <xsl:value-of select="titulo" />
                     </a>
                 </h3>
-
                 <xsl:if test="personagens">
                     <p>Personagens: </p>
                     <xsl:apply-templates select="personagens" />
                 </xsl:if>
-
                 <xsl:if test="sinopse">
                     <xsl:apply-templates select="sinopse" />
                 </xsl:if>
-
                 <xsl:apply-templates select="cena" mode="conteudo" />
             </div>
         </xsl:for-each>
@@ -252,12 +231,10 @@
                         <xsl:value-of select="titulo" />
                     </a>
                 </h3>
-                
                 <xsl:if test="personagens">
                     <p>Personagens: </p>
                     <xsl:apply-templates select="personagens" />
                 </xsl:if>
-
                 <xsl:if test="sinopse">
                     <xsl:apply-templates select="sinopse" />
                 </xsl:if>
@@ -269,12 +246,12 @@
     <xsl:template match="cena" mode="conteudo">
         <xsl:for-each select=".">
             <div id="cena">
-                <h3>
+                <h3 id="contexto">
                     <a name="{generate-id()}">
+                        Cena <xsl:number format="1" /> : 
                         <xsl:value-of select="@contexto" />
                     </a>
                 </h3>
-                
                 <p>Personagens pertinentes da cena: </p>
                 <div id="listaPersonagens">
                     <xsl:for-each select="fala">
@@ -288,35 +265,34 @@
                         </xsl:for-each>                                                         
                     </xsl:for-each>
                 </div>
-
                 <p>Adereços: </p>
-                
                 <div id="listaAderecos">
                     <xsl:for-each select="adereco">
                         <ul>
-                            <li>
+                            <li id="ladere">
                                 <xsl:value-of select="." />
                             </li>
                         </ul>
                     </xsl:for-each>
                 </div>
-
-                <xsl:if test="fala">
-                    <xsl:apply-templates select="fala"/>
-                </xsl:if>
-                
-                <xsl:if test="comentario">
-                    <xsl:apply-templates select="comentario"/>
-                </xsl:if>
-
+                <p></p>
+                <xsl:if test="text()">
+                    <xsl:apply-templates select="text()"/>
+                    <xsl:if test="comentario">
+                        <xsl:apply-templates select="comentario"/>
+                    </xsl:if>
+                    <xsl:if test="fala">
+                        <xsl:apply-templates select="fala"/>
+                    </xsl:if>
+                </xsl:if>                                         
                 <xsl:variable name="referencia" select="count(//refere)"/>
+                <xsl:variable name="pers" select="count(/guiao/cabecalho/personagens)"/>
                 <xsl:choose>
-                    <xsl:when test="$referencia &lt; 1">
+                    <xsl:when test="$referencia &lt; $pers">
                         <xsl:message terminate="no">
-                            Erro: Não há referências!
+                            Erro: Nem todas as personagens foram referidas !
                         </xsl:message>
                     </xsl:when>
-                    
                     <xsl:otherwise>
                         <p>Referência: </p>
                         <xsl:apply-templates select="refere" />
@@ -325,6 +301,7 @@
             </div>
         </xsl:for-each>
     </xsl:template>
+    
     
     <xsl:template match="fala">
         <p id="person">
@@ -335,18 +312,15 @@
                 </xsl:for-each>                                                         
             </xsl:for-each>
         </p>
-
         <div id="fala_text">
             <xsl:value-of select="text()" />
         </div>
-
         <xsl:if test="comentario">
             <xsl:apply-templates select="comentario" />
         </xsl:if>
-
     </xsl:template>
-
-        
+    
+    
     <xsl:template match="refere">
         <div class="refer">
             <xsl:for-each select=".">
