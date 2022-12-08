@@ -5,13 +5,13 @@
  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
 ]>
 
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+<xsl:stylesheet	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
-	xmlns:g="http://www.dcc.fc.up.pt/~zp/guiao/">
+	xmlns:g="http://www.dcc.fc.up.pt/~zp/guiao/"
+	version="1.0">
 
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 	
@@ -22,6 +22,7 @@
 			</rdf:Description>
 		</rdf:RDF>
 	</xsl:template>
+
 
 	<xsl:template match="cabecalho">
 		<dc:title>
