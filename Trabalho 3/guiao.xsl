@@ -13,7 +13,7 @@
 	xmlns:g="http://www.dcc.fc.up.pt/~zp/guiao/"
 	version="1.0">
 
-	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+	<xsl:output method="xml" indent="yes"/>
 	
 	<xsl:template match="guiao">
 		<rdf:RDF>
