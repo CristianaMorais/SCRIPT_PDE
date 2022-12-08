@@ -8,7 +8,13 @@
 	xmlns:foaf="http://xmlns.com/foaf/0.1/"
 	xmlns:g="http://www.dcc.fc.up.pt/~zp/guiao/">
 
-	<xsl:output method="xml" indent="yes"/>
+	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
+	
+	<xsl:template match="/">
+		<rdf:RDF xml:base="http://www.dcc.fc.up.pt/~zp/guiao/">
+			<xsl:apply-templates select="guiao" />
+		</rdf:RDF>
+	</xsl:template>
 
 	<xsl:template match="guiao">
 		<rdf:RDF>
