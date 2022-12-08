@@ -3,5 +3,9 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+	<xsl:output method="xml" indent="yes"/>
+
+	
 	
 </xsl:stylesheet>
