@@ -23,16 +23,17 @@
 		</rdf:RDF>
 	</xsl:template>
 
-
 	<xsl:template match="cabecalho">
 		<dc:title>
 			<xsl:value-of select="titulo"/>
 		</dc:title>
+
 		<dc:date>
 			<xsl:value-of select="dataPublicacao/dia"/>-<xsl:value-of select="dataPublicacao/mes"/>-<xsl:value-of select="dataPublicacao/ano"/>
 		</dc:date>
 
 		<xsl:apply-templates select="autor"/>
+
 		<g:characters>
 			<xsl:if test="personagens">
 				<xsl:apply-templates select="personagens"/>
@@ -42,7 +43,6 @@
 		<xsl:if test="sinopse">
 			<xsl:apply-templates select="sinopse"/>
 		</xsl:if>
-
 	</xsl:template>
 
 	<xsl:template match="autor">

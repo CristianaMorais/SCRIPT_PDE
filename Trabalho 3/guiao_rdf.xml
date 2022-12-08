@@ -39,7 +39,7 @@
             <g:episodio>
                <rdfs:Class rdf:about="episodio(EP1S2)">
                   <rdfs:subClassOf rdf:resource="temporada"/>
-                  <dc:title> "The One with Ross's New Girlfriend" </dc:title>
+                  <dc:title> The One with Ross's New Girlfriend </dc:title>
                   <foaf:name>No café</foaf:name>
                </rdfs:Class>
             </g:episodio>
