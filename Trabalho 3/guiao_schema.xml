@@ -18,6 +18,16 @@
 		<rdfs:subClassOf rdf:resource="guiao"/>
 	</rdfs:Class>
 
+    <rdfs:Property rdf:about="titulo">
+		<rdfs:domain rdf:resource="cabecalho"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</rdfs:Property>
+
+    <rdfs:Property rdf:about="autor">
+		<rdfs:domain rdf:resource="cabecalho"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
+	</rdfs:Property>
+
     <rdfs:Class rdf:about="cenas">
 		<rdfs:subClassOf rdf:resource="guiao"/>
 	</rdfs:Class>
