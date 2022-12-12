@@ -19,7 +19,7 @@
 	</rdfs:Class>
 
     <rdfs:Property rdf:about="titulo">
-		<rdfs:domain rdf:resource="titulo"/>
+		<rdfs:domain rdf:resource="guiao"/>
 		<rdfs:range rdf:resource="&rdfs;Literal"/>
 	</rdfs:Property>
 
