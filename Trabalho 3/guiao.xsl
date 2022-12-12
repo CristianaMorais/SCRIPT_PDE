@@ -78,7 +78,7 @@
 
 	<xsl:template match="temporada">
 		<g:Temporada>
-			<rdf:Description rdf:about="temporada{@id}">
+			<rdf:Description rdf:about="temporada({@id})">
 				<dc:title>
 					<xsl:value-of select="titulo"/>
 				</dc:title>
@@ -91,7 +91,7 @@
 
 	<xsl:template match="episodio">
 		<g:episodio>
-			<rdf:Description rdf:about="episodio{@id}">
+			<rdf:Description rdf:about="episodio({@id})">
 				<dc:title>
 					<xsl:value-of select="titulo" />
 				</dc:title>
@@ -102,7 +102,7 @@
 
 	<xsl:template match="partes">
 		<g:partes>
-			<rdf:Description rdf:about="partes{@id}">
+			<rdf:Description rdf:about="partes({@id})">
 				<dc:title>
 					<xsl:value-of select="titulo"/>
 				</dc:title>

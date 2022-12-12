@@ -20,10 +20,10 @@
          </rdf:Bag>
       </g:characters>
       <g:Temporada>
-         <rdf:Description rdf:about="temporadaFriendsTEMP1">
+         <rdf:Description rdf:about="temporada(FriendsTEMP1)">
             <dc:title> Friends 1.0 </dc:title>
             <g:episodio>
-               <rdf:Description rdf:about="episodioEP1S1">
+               <rdf:Description rdf:about="episodio(EP1S1)">
                   <dc:title> The One Where Monica Gets a Roommate </dc:title>
                   <foaf:name>Em casa</foaf:name>
                </rdf:Description>
@@ -31,10 +31,10 @@
          </rdf:Description>
       </g:Temporada>
       <g:Temporada>
-         <rdf:Description rdf:about="temporadaFSEASON2">
+         <rdf:Description rdf:about="temporada(FSEASON2)">
             <dc:title> Friends 2.0 </dc:title>
             <g:episodio>
-               <rdf:Description rdf:about="episodioEP1S2">
+               <rdf:Description rdf:about="episodio(EP1S2)">
                   <dc:title> The One with Ross's New Girlfriend </dc:title>
                   <foaf:name>No café</foaf:name>
                </rdf:Description>
