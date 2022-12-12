@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [ 
+<!ENTITY rdf  "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<!ENTITY rdfs  "http://www.w3.org/2000/01/rdf-schema#">
+<!ENTITY dc  "http://purl.org/dc/elements/1.1/">
+<!ENTITY foaf  "http://xmlns.com/foaf/0.1/">
+<!ENTITY g  "http://www.dcc.fc.up.pt/~zp/guiao/">
+]>
+
+<rdf:RDF xmlns:rdf="&rdf;" xmlns:rdfs="&rdfs;" 
+	xmlns:dc="&dc;" xmlns:foaf="&foaf;" 
+	xmlns:g="&g;" xml:base="&g;">
+	
+	<rdfs:Class rdf:about="guiao"/>
+
+	<rdfs:Class rdf:about="cabecalho">
+		<rdfs:subClassOf rdf:resource="guiao"/>
+	</rdfs:Class>
+
+    <rdfs:Class rdf:about="cenas">
+		<rdfs:subClassOf rdf:resource="guiao"/>
+	</rdfs:Class>
+
+    <rdfs:Class rdf:about="personagens">
+		<rdfs:subClassOf rdf:resource="cabecalho"/>
+	</rdfs:Class>
+
+    <rdfs:Class rdf:about="personagem">
+		<rdfs:subClassOf rdf:resource="persoangens"/>
+	</rdfs:Class>
+	
+	<rdfs:Property rdf:about="nome">
+		<rdfs:subClassOf rdf:resource="personagem" />
+		<rdfs:range rdf:resource="&rdfs;Literal" />
+	</rdfs:Property>
+
+	<rdfs:Class rdf:about="descricao">
+		<rdfs:domain rdf:resource="personagem" />
+		<rdfs:range rdf:resource="&rdfs;Literal" />
+	</rdfs:Class>
+	
+	<rdfs:Class rdf:about="temporada">
+		<rdfs:subClassOf rdf:resource="cenas" />
+	</rdfs:Class>
+	
+	<rdfs:Class rdf:about="episodio">
+		<rdfs:subClassOf rdf:resource="cenas" />
+	</rdfs:Class>
+
+    <rdfs:Class rdf:about="partes">
+		<rdfs:subClassOf rdf:resource="cenas" />
+	</rdfs:Class>
+
+    <rdfs:Class rdf:about="cena">
+		<rdfs:subClassOf rdf:resource="cenas" />
+	</rdfs:Class>
+	
+</rdf:RDF>
