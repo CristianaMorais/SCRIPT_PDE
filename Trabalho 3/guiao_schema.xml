@@ -31,29 +31,29 @@
 	</rdfs:Class>
 	
 	<rdfs:Property rdf:about="nome">
-		<rdfs:subClassOf rdf:resource="personagem" />
-		<rdfs:range rdf:resource="&rdfs;Literal" />
+		<rdfs:domain rdf:resource="personagem"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
 	</rdfs:Property>
 
 	<rdfs:Property rdf:about="descricao">
-		<rdfs:domain rdf:resource="personagem" />
-		<rdfs:range rdf:resource="&rdfs;Literal" />
+		<rdfs:domain rdf:resource="personagem"/>
+		<rdfs:range rdf:resource="&rdfs;Literal"/>
 	</rdfs:Property>
 	
 	<rdfs:Class rdf:about="temporada">
-		<rdfs:subClassOf rdf:resource="cenas" />
+		<rdfs:subClassOf rdf:resource="cenas"/>
 	</rdfs:Class>
 	
 	<rdfs:Class rdf:about="episodio">
-		<rdfs:subClassOf rdf:resource="cenas" />
+		<rdfs:subClassOf rdf:resource="cenas"/>
 	</rdfs:Class>
 
     <rdfs:Class rdf:about="partes">
-		<rdfs:subClassOf rdf:resource="cenas" />
+		<rdfs:subClassOf rdf:resource="cenas"/>
 	</rdfs:Class>
 
     <rdfs:Class rdf:about="cena">
-		<rdfs:subClassOf rdf:resource="cenas" />
+		<rdfs:subClassOf rdf:resource="cenas"/>
 	</rdfs:Class>
 	
 </rdf:RDF>
