@@ -19,7 +19,7 @@
 	</rdfs:Class>
 
     <rdfs:Property rdf:about="titulo">
-		<rdfs:domain rdf:resource="cabecalho"/>
+		<rdfs:domain rdf:resource="titulo"/>
 		<rdfs:range rdf:resource="&rdfs;Literal"/>
 	</rdfs:Property>
 
@@ -35,18 +35,14 @@
     <rdfs:Class rdf:about="personagens">
 		<rdfs:subClassOf rdf:resource="cabecalho"/>
 	</rdfs:Class>
-
-    <rdfs:Class rdf:about="personagem">
-		<rdfs:subClassOf rdf:resource="persoangens"/>
-	</rdfs:Class>
 	
 	<rdfs:Property rdf:about="nome">
-		<rdfs:domain rdf:resource="personagem"/>
+		<rdfs:domain rdf:resource="personagens"/>
 		<rdfs:range rdf:resource="&rdfs;Literal"/>
 	</rdfs:Property>
 
 	<rdfs:Property rdf:about="descricao">
-		<rdfs:domain rdf:resource="personagem"/>
+		<rdfs:domain rdf:resource="personagens"/>
 		<rdfs:range rdf:resource="&rdfs;Literal"/>
 	</rdfs:Property>
 	
