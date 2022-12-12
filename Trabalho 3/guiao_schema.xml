@@ -35,10 +35,10 @@
 		<rdfs:range rdf:resource="&rdfs;Literal" />
 	</rdfs:Property>
 
-	<rdfs:Class rdf:about="descricao">
+	<rdfs:Property rdf:about="descricao">
 		<rdfs:domain rdf:resource="personagem" />
 		<rdfs:range rdf:resource="&rdfs;Literal" />
-	</rdfs:Class>
+	</rdfs:Property>
 	
 	<rdfs:Class rdf:about="temporada">
 		<rdfs:subClassOf rdf:resource="cenas" />
