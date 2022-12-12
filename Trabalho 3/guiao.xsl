@@ -78,39 +78,36 @@
 
 	<xsl:template match="temporada">
 		<g:Temporada>
-			<rdfs:Class rdf:about="temporada({@id})">
-				<rdfs:subClassOf rdf:resource="guiao"/>
+			<rdf:Description rdf:about="temporada{@id}">
 				<dc:title>
 					<xsl:value-of select="titulo"/>
 				</dc:title>
 				<xsl:apply-templates select="episodio"/>
 				<xsl:apply-templates select="partes"/>
 				<xsl:apply-templates select="cena"/>
-			</rdfs:Class>
+			</rdf:Description>
 		</g:Temporada>
 	</xsl:template>
 
 	<xsl:template match="episodio">
 		<g:episodio>
-			<rdfs:Class rdf:about="episodio({@id})">
-				<rdfs:subClassOf rdf:resource="temporada"/>
+			<rdf:Description rdf:about="episodio{@id}">
 				<dc:title>
 					<xsl:value-of select="titulo" />
 				</dc:title>
 				<xsl:apply-templates select="cena"/>
-			</rdfs:Class>
+			</rdf:Description>
 		</g:episodio>
 	</xsl:template>
 
 	<xsl:template match="partes">
 		<g:partes>
-			<rdfs:Class rdf:about="partes({@id})">
-				<rdfs:subClassOf rdf:resource="guiao"/>
+			<rdf:Description rdf:about="partes{@id}">
 				<dc:title>
 					<xsl:value-of select="titulo"/>
 				</dc:title>
 				<xsl:apply-templates select="cena"/>
-			</rdfs:Class>
+			</rdf:Description>
 		</g:partes>
 	</xsl:template>
 
